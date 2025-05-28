@@ -23,9 +23,9 @@
 		height: 100%;
     }
     .title{
-        display: flex
-        text-align: center
-        float: right
+        display: flex;
+        text-align: center;
+        float: right;
     }
     @media screen and (min-width: 800px) {
 
