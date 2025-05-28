@@ -26,32 +26,51 @@
         width: fit-content;
         margin: auto;
     }
-    .question{
+    .description{
         background-color: var(--bg-color);
         width: 50%;
         margin: auto;
         text-align: center;
         font-size: 25px;
-        margin-top: 10%;
+        margin-top: 5%;
         border-style: solid;
     }
     .buttons{
         text-align: center;
-        margin-top: 10%;
-        font-size: 22px;
-    }
-    .answer{
-        background-color: rgb(75, 139, 243);
-        margin: 0% 5%;
-        padding: 50px 50px;
+        margin: auto;
+        margin-top: 5%;
         font-size: 22px;
     }
     .contacts{
         position: absolute;
         left: 0px;
         background-color: var(--bg-color);
-        margin-top: 6.8em;
+        bottom: 0;
         width: 12%;
+    }
+    #textResult{
+        font: bold;
+        font-size: 40px;
+    }
+    #restart{
+        background-color: rgb(129, 247, 129);
+        width: 130px;
+        height: 130px;
+        font-size: 22px;
+    }
+    #return{
+        background-color: rgb(75, 139, 243);
+        margin-left: 2%;
+        height: 130px;
+        width: 430px;
+        font-size: 22px;
+    }
+    #results{
+        background-color: rgb(251, 251, 19);
+        width: 130px;
+        height: 130px;
+        margin-left: 2%;
+        font-size: 22px;
     }
     h1, h2{
         color: var(--h-color);

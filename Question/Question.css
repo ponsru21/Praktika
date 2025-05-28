@@ -32,12 +32,12 @@
         margin: auto;
         text-align: center;
         font-size: 25px;
-        margin-top: 10%;
+        margin-top: 5%;
         border-style: solid;
     }
     .buttons{
         text-align: center;
-        margin-top: 10%;
+        margin-top: 5%;
         font-size: 22px;
     }
     .answer{
@@ -50,7 +50,7 @@
         position: absolute;
         left: 0px;
         background-color: var(--bg-color);
-        margin-top: 6.8em;
+        bottom: 0;
         width: 12%;
     }
     h1, h2{

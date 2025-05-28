@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="light" id="html">		
 <head>
-    <link rel="stylesheet" href="Question.css">
-    <script src="Question.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="Finish.css">
+    <script src="Finish.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<title>Тест</title>
+	<title>javaCub</title>
 </head>
 <body>
     <header class="title">
         <h1>
-        Вопрос 1
+        Тест окончен!
         </h1>
     </header>
-    <div class="question">
-        javaCub - тест, разработанный для проверки знаний языка java.
-        Тест содержит ## вопросов и нацелен на новичков, только начинающих изучение языка.
-        Тест можно пройти несколько раз, все результаты и дата выполнения теста будут записаны и сохранены.
-        Желаем удачи.
+    <div class="description">
+        <p>Ваш результат: <br>
+        <div id="textResult">##/##</div>
+        </p>
+        <p id="resultDescription">
+            Вы неплохо знаете язык. Отличная работа!
+        </p>
     </div>
     <div class="buttons">
-        <button class="answer">Ответ 1</button>
-        <button class="answer">Ответ 2</button>
-        <button class="answer">Ответ 3</button>
-        <button class="answer">Ответ 4</button>
+        <button id="restart">Eщё раз</button>
+        <button id="return">На главную страницу</button>
+        <button id="results">Результаты</button>
     </div>
     <footer class="contacts">
         Разработал: Пузанов Владимир <br>
