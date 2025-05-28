@@ -1,0 +1,58 @@
+:root{
+    --bg-color: #ffffff;
+    --h-color: #000000;
+    --text-color:#000000;
+    --link-color: #1f08a1;
+}
+[data-theme="dark"] {
+    --bg-color: #1c1a1a;
+    --h-color: #ff8585;
+    --text-color:#00fcf0;
+    --link-color: #c89ae3;                     
+}
+	body {
+        background-color: var(--bg-color);
+        background-image: url('../letterJ.png');
+        color: var(--text-color);
+		height: 100%;
+	}
+    div {
+		height: 100%;
+    }
+    .title{
+        background-color: var(--bg-color);
+        text-align: center;
+        font-size: 40px;
+        width: fit-content;
+        margin: auto;
+    }
+    .question{
+        background-color: var(--bg-color);
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 10%;
+        border-style: solid;
+    }
+    .buttons{
+        text-align: center;
+        margin-top: 10%;
+        font-size: 22px;
+    }
+    .answer{
+        background-color: rgb(75, 139, 243);
+        margin: 0% 5%;
+        padding: 50px 50px;
+        font-size: 22px;
+    }
+    .contacts{
+        position: absolute;
+        left: 0px;
+        background-color: var(--bg-color);
+        margin-top: 6.8em;
+        width: 12%;
+    }
+    h1, h2{
+        color: var(--h-color);
+    }
