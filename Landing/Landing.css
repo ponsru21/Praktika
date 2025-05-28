@@ -1,0 +1,67 @@
+:root{
+    --bg-color: #ffffff;
+    --h-color: #000000;
+    --text-color:#000000;
+    --link-color: #1f08a1;
+}
+[data-theme="dark"] {
+    --bg-color: #1c1a1a;
+    --h-color: #ff8585;
+    --text-color:#00fcf0;
+    --link-color: #c89ae3;                     
+}
+	body {
+        background-color: var(--bg-color);
+        background-image: url('../letterJ.png');
+        color: var(--text-color);
+		height: 100%;
+	}
+    div {
+		height: 100%;
+    }
+    .title{
+        background-color: var(--bg-color);
+        text-align: center;
+        font-size: 40px;
+        width: 54%;
+        margin-left: 23%;
+        margin-right: 23%;
+    }
+    .description{
+        background-color: var(--bg-color);
+        width: 50%;
+        text-align: center;
+        font-size: 25px;
+        font-size: 25px;
+        margin-top: 10%;
+        margin-left: 25%;
+        margin-right: 25%;
+        border-style: solid;
+    }
+    .buttons{
+        text-align: center;
+        margin-top: 10%;
+        font-size: 22px;
+    }
+    #start{
+        background-color: rgb(129, 247, 129);
+        margin-left: 8%;
+        padding: 50px 200px;
+        font-size: 22px;
+    }
+    #results{
+        background-color: rgb(251, 251, 19);
+        margin-left: 2%;
+        padding: 50px 10px;
+        font-size: 22px;
+    }
+    .contacts{
+        position: absolute;
+        background-color: var(--bg-color);
+        margin-top: 6.8em;
+        margin-left: 0%;
+        width: 12%;
+    }
+    h1, h2{
+        color: var(--h-color);
+    }
