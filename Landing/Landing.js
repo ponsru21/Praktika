@@ -1,4 +1,4 @@
-(function() {
+
     window.addEventListener('load', init);
     function init() {
         document.getElementById("start").addEventListener("click", startTest);
@@ -12,4 +12,3 @@
     function showResults(){
         
     }
-})()
