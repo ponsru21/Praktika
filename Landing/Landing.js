@@ -6,7 +6,7 @@
     }
 
     function startTest(){
-
+        window.location.href = "../Question/Question.html"
     }
 
     function showResults(){
