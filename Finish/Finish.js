@@ -7,10 +7,33 @@
     }
 
     function currentResults(){
+        let score=0
+        let textScore=document.getElementById("textResult")
+        let resultDescription=document.getElementById("resultDescription")
         let userAns=localStorage.userAns
         let realAns=localStorage.realAns
-        console.log(userAns[0])
-        console.log(realAns[0])
+        let totalQuestions=Math.ceil(userAns.length/2)
+        console.log(userAns)
+        console.log(realAns)
+        for(let i=0; i<userAns.length; i++){
+            if(userAns[i]===realAns[i] && userAns[i]!=','){
+                score++
+            }
+        }
+        textScore.innerHTML=score+"/"+totalQuestions
+        if(score / totalQuestions < 0.6){
+            resultDescription.innerHTML="Всё печально, надо серьёзно постараться."
+        } else {
+            if(score / totalQuestions >= 0.6 && score / totalQuestions < 0.7){
+                resultDescription.innerHTML="Не хорошо, но и не плохо, есть над чем работать."
+            } else {
+                if(score / totalQuestions >= 0.7 && score / totalQuestions < 0.8){ 
+                    resultDescription.innerHTML="Вы неплохо знаете язык. Хорошая работа!"
+                } else {
+                    resultDescription.innerHTML="Вы замечательно разбираетесь в языке!"
+                }
+            }
+        }
     }
 
     function gotoLanding(){
