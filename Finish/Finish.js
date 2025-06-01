@@ -1,3 +1,5 @@
+
+    
     window.addEventListener('load', init);
     function init() {
         document.getElementById("return").addEventListener("click", gotoLanding);
@@ -10,11 +12,12 @@
         let score=0
         let textScore=document.getElementById("textResult")
         let resultDescription=document.getElementById("resultDescription")
+        let textName=document.getElementById("nameId")
         let userAns=localStorage.userAns
         let realAns=localStorage.realAns
+        let name=localStorage.name
+        textName.innerHTML=name + ", Ваш результат:"
         let totalQuestions=Math.ceil(userAns.length/2)
-        console.log(userAns)
-        console.log(realAns)
         for(let i=0; i<userAns.length; i++){
             if(userAns[i]===realAns[i] && userAns[i]!=','){
                 score++
@@ -34,6 +37,7 @@
                 }
             }
         }
+        localStorage.clear()
     }
 
     function gotoLanding(){

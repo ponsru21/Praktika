@@ -27,7 +27,6 @@ let realAns=[];
     function gotoResult(){
         localStorage.userAns=userAns
         localStorage.realAns=realAns
-        console.log(localStorage.userAns)
         window.location.href = "../Finish/Finish.html";
     }
 
@@ -75,7 +74,6 @@ let realAns=[];
     function processData(){
         let ans=data[cnt].correctAnswer;
         realAns.push(ans);
-        console.log(cnt)
         cnt=cnt+1;
         if(cnt==5){
             gotoResult();
