@@ -1,10 +1,11 @@
 
-    
+    let data=1
     window.addEventListener('load', init);
     function init() {
         document.getElementById("return").addEventListener("click", gotoLanding);
         document.getElementById("restart").addEventListener("click", restartTest);
         document.getElementById("results").addEventListener("click", showResults);
+        dataFetch()
         currentResults()
     }
 
@@ -15,14 +16,15 @@
         let textName=document.getElementById("nameId")
         let userAns=localStorage.userAns
         let realAns=localStorage.realAns
-        let name=localStorage.name
-        textName.innerHTML=name + ", Ваш результат:"
+        let username=localStorage.name
+        textName.innerHTML=username + ", Ваш результат:"
         let totalQuestions=Math.ceil(userAns.length/2)
         for(let i=0; i<userAns.length; i++){
             if(userAns[i]===realAns[i] && userAns[i]!=','){
                 score++
             }
         }
+        writeAnswer(username, score)
         textScore.innerHTML=score+"/"+totalQuestions
         if(score / totalQuestions < 0.6){
             resultDescription.innerHTML="Всё печально, надо серьёзно постараться."
@@ -38,6 +40,18 @@
             }
         }
         localStorage.clear()
+    }
+
+    function writeAnswer(username, score){
+        let obj={name: username, score:score}
+        obj=JSON.stringify(obj)
+        console.log(data)
+    }
+    async function dataFetch(){
+        const url='answers.json';
+        const request = new Request(url);
+        const response = await fetch(request);
+        data = await response.json();
     }
 
     function gotoLanding(){
