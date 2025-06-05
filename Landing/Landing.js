@@ -1,54 +1,67 @@
 let db
 async function openDB() {
-  db = await idb.openDb('userScores', 1, db => {
+  let openRequest = indexedDB.open("scores", 2);
+  openRequest.onsuccess = function() {
+  db = openRequest.result;
+  }
+openRequest.onupgradeneeded = function() {
+  db = openRequest.result;
+  if (!db.objectStoreNames.contains('scores')) { 
     db.createObjectStore('scores', {keyPath: 'name'});
-  });
+  }
+}
 }
 async function getUserScores(){
 
 }
-async function getAllScores() {
-  let tx = db.transaction('scores');
+async function getAllScores(bigList) {
+  console.log(db)
+  let tx = db.transaction('scores', 'readonly');
   let allScores = tx.objectStore('scores');
-
   let scores = await allScores.getAll();
 
-  if (scores.length) {
-    let list=0
+  if (scores.length>9) {
+    scores.sort((a,b) => a.score-b.score)
     for(let i=0; i<10; i++){
+      if (scores[i].length){
+      let userScore=document.createElement("li")
+      let userScoreName=scores[i].name
+      let userScoreActual=scores[i].score
+      userScore.appendChild(document.createTextNode("Имя: " + userScoreName +" | Результат: " + userScoreActual))
+      bigList.appendChild(userScore)
+    } else {
+      console.log("error, not enough results")
     }
-    listElem.innerHTML = books.map(book => `<li>
-        name: ${book.name}, price: ${book.price}
-      </li>`).join('');
-  } else {
-    //else if it dosent do some funny stuff
   }
-
-
+  } else {
+    for(let i=0; i<scores.length; i++){
+      if (scores[i].length){
+      let userScore=document.createElement("li")
+      let userScoreName=scores[i].name
+      let userScoreActual=scores[i].score
+      userScore.appendChild(document.createTextNode("Имя: " + userScoreName +" | Результат: " + userScoreActual))
+      bigList.appendChild(userScore)
+    } else {
+      console.log("error, not enough results")
+    }
+  }
 }
-
+}
 async function clearScores() {
   let tx = db.transaction('scores', 'readwrite');
   await tx.objectStore('scores').clear();
-  await list();
 }
-
-async function addScore(username, score) {
-    //adding stuff
-  let name = username
-  let score = score
-
+async function addScore(username, userScore) { //needs fixes later
   let tx = db.transaction('scores', 'readwrite');
-
   try {
-    await tx.objectStore('score').add({name, score});
+    await tx.objectStore('score').add({username, userScore});
     await list();
   } catch(err) {
     if (err.name == 'ConstraintError') {
       alert("Such book exists already");
       await addBook();
     } else {
-      throw err; //needs fixes later
+      throw err; 
     }
   }
 }
@@ -57,6 +70,7 @@ async function addScore(username, score) {
         document.getElementById("start").addEventListener("click", startTest);
         document.getElementById("results").addEventListener("click", showResults);
         document.getElementById("nameInput").addEventListener("input", buttonUnlock)
+        openDB()
     }
 
     function buttonUnlock(){
@@ -76,5 +90,9 @@ async function addScore(username, score) {
     }
 
     function showResults(){
-        
+        let bigList=document.createElement("ol")
+        bigList.setAttribute("id", "resultList")
+
+        getAllScores(bigList)
+        document.body.appendChild(bigList)
     }

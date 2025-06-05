@@ -32,11 +32,11 @@
         "correctAnswer":"4"
     },
     {
-        "question":"Какой по счёту это вопрос",
-        "answer1":"3",
-        "answer2":"5",
-        "answer3":"0",
-        "answer4":"18",
+        "question":"Как называется функция 'пока что'",
+        "answer1":"if",
+        "answer2":"while",
+        "answer3":"switch",
+        "answer4":"try",
         "correctAnswer":"2"
     }
 ]

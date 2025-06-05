@@ -65,6 +65,10 @@
         padding: 10px 20px;
         font-size: 22px;
     }
+    #resultList{
+        z-index: 20;
+        background-color: rgb(236, 236, 130);
+    }
     h1, h2{
         color: var(--h-color);
     }
